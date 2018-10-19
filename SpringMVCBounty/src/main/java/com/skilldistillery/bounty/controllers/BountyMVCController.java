@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.skilldistillery.bounty.data.BountyDAO;
 import com.skilldistillery.bounty.entities.Bounty;
@@ -26,6 +27,12 @@ public class BountyMVCController {
 	public String allBounties(Model model) {
 		List<Bounty> allBounties = bountyDAO.findAll();
 		model.addAttribute("bounties", allBounties);
+		return "/WEB-INF/views/result.jsp";
+	}
+	@RequestMapping(path="getBounty.do", params="bountyId", method = RequestMethod.GET)
+	public String getBounty(@RequestParam("bountyId") int bountyId, Model model) {
+		Bounty bounty= bountyDAO.findById(bountyId);
+		model.addAttribute("bounty", bounty);
 		return "/WEB-INF/views/result.jsp";
 	}
 	
