@@ -35,6 +35,19 @@ public class BountyMVCController {
 		model.addAttribute("bounty", bounty);
 		return "/WEB-INF/views/result.jsp";
 	}
+	@RequestMapping(path="bountiesByName.do", method = RequestMethod.GET)
+	public String bountiesByName(Model model) {
+		model.addAttribute("bountiesByName", new Boolean(true));
+		return "/WEB-INF/views/search.jsp";
+	}
+	
+	@RequestMapping(path="bountiesByCrime.do", method = RequestMethod.GET)
+	public String bountiesByCrime(Model model) {
+		model.addAttribute("bountiesByCrime", new Boolean(true));
+		return "/WEB-INF/views/search.jsp";
+	}
+	
+	
 	
 	
 }
