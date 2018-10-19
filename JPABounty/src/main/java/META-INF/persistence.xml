@@ -8,10 +8,13 @@
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider
     </provider>
 
+		<class>com.skilldistillery.bounty.entities.Bounty</class>
+
 		<properties>
 			<property name="javax.persistence.jdbc.url"
 				value="jdbc:mysql://localhost:3306/Bountydb?useSSL=false" />
-			<property name="javax.persistence.jdbc.user" value="bountyhunteruser" />
+			<property name="javax.persistence.jdbc.user"
+				value="bountyhunteruser" />
 			<property name="javax.persistence.jdbc.password"
 				value="onepiece" />
 			<property name="javax.persistence.jdbc.driver"
