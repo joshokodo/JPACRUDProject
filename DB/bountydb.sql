@@ -24,7 +24,6 @@ CREATE TABLE IF NOT EXISTS `bounty` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `first_name` VARCHAR(45) NOT NULL,
   `last_name` VARCHAR(45) NOT NULL,
-  `middle_initial` CHAR(1) NULL,
   `price` INT NOT NULL,
   `wanted_alive` CHAR(1) NOT NULL,
   `description` VARCHAR(250) NOT NULL,
@@ -49,9 +48,9 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `bountydb`;
-INSERT INTO `bounty` (`id`, `first_name`, `last_name`, `middle_initial`, `price`, `wanted_alive`, `description`, `crime`, `nickname`) VALUES (1, 'Luffy', 'Monkey', 'D', 1500000000, 'N', 'short, black hair, wears strawhat', 'J_WALKING', NULL);
-INSERT INTO `bounty` (`id`, `first_name`, `last_name`, `middle_initial`, `price`, `wanted_alive`, `description`, `crime`, `nickname`) VALUES (2, 'Zoro', 'Roranoa', NULL, 500000000, 'N', 'medium height and build, green hair, scar on eye, carries three swords', 'PUNCHING_BABIES', NULL);
-INSERT INTO `bounty` (`id`, `first_name`, `last_name`, `middle_initial`, `price`, `wanted_alive`, `description`, `crime`, `nickname`) VALUES (3, 'Sanji', 'Vinsmoke', NULL, 320000000, 'N', '\"blonde hair, wears suits, cooks alot', 'SWEARING', NULL);
+INSERT INTO `bounty` (`id`, `first_name`, `last_name`, `price`, `wanted_alive`, `description`, `crime`, `nickname`) VALUES (1, 'Luffy', 'Monkey', 1500000000, 'N', 'short, black hair, wears strawhat', 'J_WALKING', NULL);
+INSERT INTO `bounty` (`id`, `first_name`, `last_name`, `price`, `wanted_alive`, `description`, `crime`, `nickname`) VALUES (2, 'Zoro', 'Roranoa', 500000000, 'N', 'medium height and build, green hair, scar on eye, carries three swords', 'PUNCHING_BABIES', NULL);
+INSERT INTO `bounty` (`id`, `first_name`, `last_name`, `price`, `wanted_alive`, `description`, `crime`, `nickname`) VALUES (3, 'Sanji', 'Vinsmoke', 320000000, 'N', '\"blonde hair, wears suits, cooks alot', 'SWEARING', NULL);
 
 COMMIT;
 

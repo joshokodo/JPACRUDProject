@@ -20,9 +20,6 @@ public class Bounty {
 	@Column(name="last_name")
 	private String lastName;
 	
-	@Column(name="middle_initial")
-	private Character middleInitial;
-	
 	private int price;
 	
 	@Column(name="wanted_alive")
@@ -38,12 +35,11 @@ public class Bounty {
 	
 	// constructors
 	public Bounty() { }
-	public Bounty(String firstName, String lastName, Character middleInitial, int price, char wantedAlive,
+	public Bounty(String firstName, String lastName, int price, char wantedAlive,
 			String description, Crime crime, String nickname) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.middleInitial = middleInitial;
 		this.price = price;
 		this.wantedAlive = wantedAlive;
 		this.description = description;
@@ -65,12 +61,7 @@ public class Bounty {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public Character getMiddleInitial() {
-		return middleInitial;
-	}
-	public void setMiddleInitial(Character middleInitial) {
-		this.middleInitial = middleInitial;
-	}
+
 	public int getPrice() {
 		return price;
 	}
@@ -115,8 +106,6 @@ public class Bounty {
 		builder.append(firstName);
 		builder.append(", lastName=");
 		builder.append(lastName);
-		builder.append(", middleInitial=");
-		builder.append(middleInitial);
 		builder.append(", price=");
 		builder.append(price);
 		builder.append(", wantedAlive=");

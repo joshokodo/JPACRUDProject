@@ -44,13 +44,16 @@ class BountyTest {
 	@Test
 	@DisplayName("tests that entity was properly mapped for all data")
 	void test_bounty_mapping() {
-		Bounty expected = new Bounty("Luffy", "Monkey", 'D', 1_500_000_000, 'N', "short, black hair, wears strawhat",
+		Bounty expected = new Bounty("Luffy", "Monkey", 1_500_000_000, 'N', "short, black hair, wears strawhat",
 				Crime.J_WALKING, null);
 		
 		assertEquals(expected.getFirstName(), actual.getFirstName());
 		assertEquals(expected.getLastName(), actual.getLastName());
+		assertEquals(expected.getWantedAlive(), actual.getWantedAlive());
+		assertEquals(expected.getPrice(), actual.getPrice());
 		assertEquals(expected.getCrime(), actual.getCrime());
 		assertEquals(expected.getDescription(), actual.getDescription());
+		assertEquals(expected.getNickname(), actual.getNickname());
 	}
 
 }
