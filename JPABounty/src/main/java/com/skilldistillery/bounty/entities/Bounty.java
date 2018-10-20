@@ -120,6 +120,61 @@ public class Bounty {
 		return builder.toString();
 	}
 	
+	// hashCode and Equals
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((crime == null) ? 0 : crime.hashCode());
+		result = prime * result + ((description == null) ? 0 : description.hashCode());
+		result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
+		result = prime * result + id;
+		result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
+		result = prime * result + ((nickname == null) ? 0 : nickname.hashCode());
+		result = prime * result + price;
+		result = prime * result + wantedAlive;
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Bounty other = (Bounty) obj;
+		if (crime != other.crime)
+			return false;
+		if (description == null) {
+			if (other.description != null)
+				return false;
+		} else if (!description.equals(other.description))
+			return false;
+		if (firstName == null) {
+			if (other.firstName != null)
+				return false;
+		} else if (!firstName.equals(other.firstName))
+			return false;
+		if (id != other.id)
+			return false;
+		if (lastName == null) {
+			if (other.lastName != null)
+				return false;
+		} else if (!lastName.equals(other.lastName))
+			return false;
+		if (nickname == null) {
+			if (other.nickname != null)
+				return false;
+		} else if (!nickname.equals(other.nickname))
+			return false;
+		if (price != other.price)
+			return false;
+		if (wantedAlive != other.wantedAlive)
+			return false;
+		return true;
+	}
+	
 	
 
 }

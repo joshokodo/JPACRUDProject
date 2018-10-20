@@ -10,12 +10,16 @@
 </head>
 <body>
 
-	<c:forEach items="${bounties }" var="b">
+	<c:if test="${not empty bounties }">
+		<c:forEach items="${bounties }" var="b">
 
-		<a href="getBounty.do?bountyId=${b.id }">${b.id}. Name: ${b.firstName}</a>
-		<br>
-		<br>
-	</c:forEach>
+			<a href="getBounty.do?bountyId=${b.id }">${b.id}. Name:
+				${b.firstName}</a>
+			<br>
+			<br>
+		</c:forEach>
+
+	</c:if>
 	
 	<c:if test="${not empty bounty  }">
 		<ul>

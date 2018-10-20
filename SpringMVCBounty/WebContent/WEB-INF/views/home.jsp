@@ -5,19 +5,24 @@
 <head>
 <meta charset="UTF-8">
 <title>Happy Hunting</title>
+<link href="../css/loginstyle.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<h1>Bounty Hunter Paradise. Happy Hunting!</h1>
+	<h1 id="mainHeader">BOUNTY</h1>
 
-	<form action="allBounties.do">
-		<input type="submit" value="All Bounties"/>
+	<form action="search.do">
+		<input type="search" name="searchText"/>
+		<br>
+		<input type="submit" name="search" value="Search"/>
+		<input type="submit" name="lucky" value="I'm Feeling Lucky"/>
 	</form>	
-	<form action="bountiesByName.do">
-		<input type="submit" value="Search Bounties By Name"/>
-	</form>	
-	<form action="bountiesByCrime.do">
-		<input type="submit" value="Search Bounties By Crime"/>
-	</form>	
+	<form action="moreOptions.do">
+		<h3>More Options</h3>
+		<input type="submit" name="all" value="All Bounties"/>
+		<input type="submit" name="detail" value="Detailed Search"/>
+		<input type="submit" name="add" value="Add Bounty"/>		
+	</form>
+	
 	
 </body>
 </html>
