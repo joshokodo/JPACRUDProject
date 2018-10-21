@@ -42,6 +42,10 @@ public class BountyDAOImpl implements BountyDAO {
 
 	@Override
 	public Bounty findByEntity(Bounty b) {
+		if(emptyEntity(b)) {
+			return null;
+		}
+		
 		StringBuilder query = new StringBuilder("SELECT b FROM Bounty b WHERE b.id > 0");
 		
 		if(!emptyOrNull(b.getFirstName())) {
@@ -162,6 +166,13 @@ public class BountyDAOImpl implements BountyDAO {
 	}
 	
 	private boolean emptyEntity(Bounty b) {
-		if()
+		return (b.getFirstName() == null || b.getFirstName().isEmpty())
+				&&
+				(b.getLastName() == null || b.getLastName().isEmpty())
+				&&
+				(b.getNickname() == null || b.getNickname().isEmpty())
+				&&
+				(b.getDescription() == null || b.getDescription().isEmpty());
+				
 	}
 }

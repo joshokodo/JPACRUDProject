@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.skilldistillery.bounty.data.BountyDAO;
 import com.skilldistillery.bounty.entities.Bounty;
-import com.skilldistillery.bounty.entities.Crime;
 
 @Controller
 public class BountyMVCController {
@@ -20,13 +19,23 @@ public class BountyMVCController {
 	@Autowired
 	BountyDAO bountyDAO;
 
-	@RequestMapping(path = "home.do", method = RequestMethod.GET)
+	@RequestMapping(path = {"home.do"}, method = RequestMethod.GET)
 	public String homePage(Model model) {
 		return "/WEB-INF/views/home.jsp";
 	}
-	@RequestMapping(path = "moreOptions.do", params = "detail", method = RequestMethod.GET)
-	public String detailSearch(Model model) {
-		return "/WEB-INF/views/specificSearch.jsp";
+	@RequestMapping(path = {"navigationOptions.do"}, params = "home", method = RequestMethod.GET)
+	public String backToHomePage(Model model) {
+		return "/WEB-INF/views/home.jsp";
+	}
+	@RequestMapping(path = "navigationOptions.do", params = "detail", method = RequestMethod.GET)
+	public String detailSearchPage(Model model) {
+		model.addAttribute("detailSearch", new Boolean(true));
+		return "/WEB-INF/views/form.jsp";
+	}
+	@RequestMapping(path = "navigationOptions.do", params = "add", method = RequestMethod.GET)
+	public String addBountyPage(Model model) {
+		model.addAttribute("addBounty", new Boolean(true));
+		return "/WEB-INF/views/form.jsp";
 	}
 
 	@RequestMapping(path = "search.do", params = "search", method = RequestMethod.GET)
@@ -44,7 +53,7 @@ public class BountyMVCController {
 		return "/WEB-INF/views/results.jsp";
 	}
 
-	@RequestMapping(path = "moreOptions.do", params = "all", method = RequestMethod.GET)
+	@RequestMapping(path = "navigationOptions.do", params = "all", method = RequestMethod.GET)
 	public String allResults(Model model) {
 		List<Bounty> allBounties = bountyDAO.findAll();
 		model.addAttribute("bounties", allBounties);
