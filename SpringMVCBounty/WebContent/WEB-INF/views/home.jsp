@@ -19,7 +19,7 @@
 	<form action="moreOptions.do">
 		<h3>More Options</h3>
 		<input type="submit" name="all" value="All Bounties"/>
-		<input type="submit" name="detail" value="Detailed Search"/>
+		<input type="submit" name="detail" value="Specific Bounty"/>
 		<input type="submit" name="add" value="Add Bounty"/>		
 	</form>
 	

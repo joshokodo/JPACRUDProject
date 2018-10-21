@@ -41,6 +41,23 @@ public class BountyDAOImpl implements BountyDAO {
 	
 
 	@Override
+	public Bounty findByEntity(Bounty b) {
+		StringBuilder query = new StringBuilder("SELECT b FROM Bounty b WHERE b.id > 0");
+		
+		if(!emptyOrNull(b.getFirstName())) {
+			query.append(" AND b.firstName = '" + b.getFirstName() + "'");
+		}
+		if(!emptyOrNull(b.getLastName())) {
+			query.append(" AND b.lastName = '" + b.getLastName()  + "'");
+		}
+		if(b.getPrice() > 0) {
+			query.append(" AND b.price = " + b.getPrice());
+		}
+		List<Bounty> bounties =  em.createQuery(query.toString(), Bounty.class).getResultList();
+		return bounties != null && !bounties.isEmpty() ? bounties.get(0) : null;
+	}
+
+	@Override
 	public Set<Bounty> findAllByKeywords(String text) {
 		Set<Bounty> bounties = new HashSet<>();
 		String[] keywords = text.trim().split("\\s+");
@@ -142,5 +159,9 @@ public class BountyDAOImpl implements BountyDAO {
 	private boolean isLikeCrimeEnum(String s) {
 		Crime.valueOf(s);
 		return false;
+	}
+	
+	private boolean emptyEntity(Bounty b) {
+		if()
 	}
 }

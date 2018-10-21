@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS `bounty` (
   `price` INT NOT NULL,
   `wanted_alive` CHAR(1) NOT NULL,
   `description` VARCHAR(250) NOT NULL,
-  `crime` ENUM('J_WALKING', 'SWEARING', 'SPITTING', 'PUNCHING_BABIES', 'DISRESPECT_MAMA') NOT NULL,
+  `crime` ENUM('J_WALKING', 'PETTY_THEFT', 'PUBLIC_INTOXICATION', 'VANDALISM', 'RECKLESS_DRIVING', 'DISORDERLY_CONDUCT', 'TRESPASS') NOT NULL,
   `nickname` VARCHAR(45) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
@@ -48,9 +48,9 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `bountydb`;
-INSERT INTO `bounty` (`id`, `first_name`, `last_name`, `price`, `wanted_alive`, `description`, `crime`, `nickname`) VALUES (1, 'Luffy', 'Monkey', 1500000000, 'N', 'short, black hair, wears strawhat', 'J_WALKING', NULL);
-INSERT INTO `bounty` (`id`, `first_name`, `last_name`, `price`, `wanted_alive`, `description`, `crime`, `nickname`) VALUES (2, 'Zoro', 'Roranoa', 500000000, 'N', 'medium height and build, green hair, scar on eye, carries three swords', 'PUNCHING_BABIES', NULL);
-INSERT INTO `bounty` (`id`, `first_name`, `last_name`, `price`, `wanted_alive`, `description`, `crime`, `nickname`) VALUES (3, 'Sanji', 'Vinsmoke', 320000000, 'N', '\"blonde hair, wears suits, cooks alot', 'SWEARING', NULL);
+INSERT INTO `bounty` (`id`, `first_name`, `last_name`, `price`, `wanted_alive`, `description`, `crime`, `nickname`) VALUES (1, 'Luffy', 'Monkey', 1500000000, 'N', 'short, black hair, wears strawhat', 'J_WALKING', 'strawhat');
+INSERT INTO `bounty` (`id`, `first_name`, `last_name`, `price`, `wanted_alive`, `description`, `crime`, `nickname`) VALUES (2, 'Zoro', 'Roranoa', 500000000, 'N', 'medium height and build, green hair, scar on eye, carries three swords', 'PUBLIC_INTOXICATION', NULL);
+INSERT INTO `bounty` (`id`, `first_name`, `last_name`, `price`, `wanted_alive`, `description`, `crime`, `nickname`) VALUES (3, 'Sanji', 'Vinsmoke', 320000000, 'N', 'blonde hair, wears suits, cooks alot', 'DISORDERLY_CONDUCT', NULL);
 
 COMMIT;
 

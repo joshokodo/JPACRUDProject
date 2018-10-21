@@ -8,6 +8,7 @@ import com.skilldistillery.bounty.entities.Crime;
 
 public interface BountyDAO {
 	Bounty findById(int id);
+	Bounty findByEntity(Bounty b);
 	List<Bounty> findAllByFirstName(String fName);
 	List<Bounty> findAllByLastName(String lName);
 	List<Bounty> findAllByCrime(Crime crime);

@@ -9,7 +9,6 @@
 <title>Bounties Found</title>
 </head>
 <body>
-
 	<c:if test="${not empty bounties }">
 		<c:forEach items="${bounties }" var="b">
 
@@ -20,16 +19,22 @@
 		</c:forEach>
 
 	</c:if>
-	
+
 	<c:if test="${not empty bounty  }">
 		<ul>
 			<li>${bounty.firstName}</li>
+			<li>${bounty.lastName}</li>
+			<li>${bounty.price}</li>
 		</ul>
 	</c:if>
-	
+	<c:if test="${empty bounty && empty bounties }">
+		<h2>No Bounties Found</h2>
+	</c:if>
+
 	<form action="home.do">
-		<input type="submit" value="Home Page"/>
+		<input type="submit" value="Home Page" />
 	</form>
+
 
 </body>
 </html>
