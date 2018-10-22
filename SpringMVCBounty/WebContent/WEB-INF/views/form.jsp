@@ -110,16 +110,16 @@
 		</h2>
 		<form action="alterBounty.do" method="POST">
 			<label for="firstNameSearched">First Name</label> 
-			<input type="text" name="firstName" value="${editBounty.firstName }"/> 
+			<input type="text" pattern=".{3,}" required name="firstName" value="${editBounty.firstName }"/> 
 			<br> 
 			<label for="lastNameSearched">Last Name</label> 
-			<input type="text" name="lastName" value="${editBounty.lastName }"/> 
+			<input type="text" pattern=".{3,}" required name="lastName" value="${editBounty.lastName }"/> 
 			<br>
 			<label for="nicknameSearched">Nickname</label> 
 			<input type="text" name="nickname" value="${editBounty.nickname }"/> 
 			<br>
 			<label for="description">Description</label>
-			<input type="text" name="description" value="${editBounty.description }"/>
+			<input type="text" pattern=".{3,}" required name="description" value="${editBounty.description }"/>
 			<br>
 			<br>
 			<label for="wantedAlive">Wanted Alive Only?</label> 
@@ -162,7 +162,7 @@
 			<br>
 			<br>
 			<label for="price">Price</label>
-			<input type="number" name="price" min="0" max="2000000000" value="${editBounty.price }"/>
+			<input type="number" name="price" min="0" required max="2000000000" value="${editBounty.price }"/>
 			<br>
 			<input type="submit" name="updateBounty" value="submit" />
 			<input type="hidden" name="id" value="${editBounty.id }"/>
