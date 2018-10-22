@@ -12,8 +12,8 @@
 	
 	
 	<form action="search.do">
-		<table style="width:100%">
-		<tr style="text-align: center">
+		<table>
+		<tr>
 			
 			<th style="color:blue; font-size:40px ">B</th>
 			<th style="color:orange;  font-size:40px">O</th>
