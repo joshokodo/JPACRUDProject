@@ -52,7 +52,7 @@
 			<input type="submit" name="crime" value="submit" />
 			<hr>
 		</form>
-		<form action="priceSearch" method="POST">
+		<form action="priceSearch.do" method="POST">
 			<h2>By Price Range</h2>
 			Minimum:<input name="minPrice" min="0" max="2000000000" type="number" />
 			Maximum:<input name="maxPrice" min="0" max="2000000000" type="number" />
@@ -162,7 +162,7 @@
 			<br>
 			<br>
 			<label for="price">Price</label>
-			<input type="number" name="price" min="0" required max="2000000000" value="${editBounty.price }"/>
+			<input type="number" name="price" min="0" max="2000000000" value="${editBounty.price }"/>
 			<br>
 			<input type="submit" name="updateBounty" value="submit" />
 			<input type="hidden" name="id" value="${editBounty.id }"/>
