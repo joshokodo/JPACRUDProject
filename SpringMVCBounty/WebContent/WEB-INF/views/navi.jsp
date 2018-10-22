@@ -4,6 +4,7 @@
 <nav>
 
 <form action="navigationOptions.do" method="post">
+
 <table>
 	<tr>
 		<th><h3>Navigate</h3></th>

@@ -6,7 +6,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-
 <title>Happy Hunting</title>
 </head>
 <body>
@@ -169,7 +168,6 @@
 			<input type="hidden" name="id" value="${editBounty.id }"/>
 		</form>
 	</c:if>
-
 
 
 

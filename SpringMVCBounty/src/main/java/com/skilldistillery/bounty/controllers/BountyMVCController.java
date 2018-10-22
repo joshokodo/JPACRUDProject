@@ -94,14 +94,14 @@ public class BountyMVCController {
 	
 	
 
-	@RequestMapping(path = "search.do", params = "search", method = RequestMethod.POST)
+	@RequestMapping(path = "search.do", params = "search", method = RequestMethod.GET)
 	public String generalSearch(String searchText, Model model) {
 		Set<Bounty> bountiesFound = bountyDAO.findAllByKeywords(searchText);
 		model.addAttribute("bounties", bountiesFound);
 		return "/WEB-INF/views/results.jsp";
 	}
 
-	@RequestMapping(path = "search.do", params = "lucky", method = RequestMethod.POST)
+	@RequestMapping(path = "search.do", params = "lucky", method = RequestMethod.GET)
 	public String luckySearch(String searchText, Model model) {
 		Set<Bounty> bountiesFound = bountyDAO.findAllByKeywords(searchText);
 		Bounty firstFound = emptyOrNull(bountiesFound) ? null : (Bounty) bountiesFound.toArray()[0];
