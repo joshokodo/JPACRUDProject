@@ -11,11 +11,11 @@ on the top of each page. All bounties can be found at once at any time from the 
 in the navigation portion of a page.
 
 ##Technologies/Techniques used
-*JPA and JPQL
-*Spring API
-*MySql
-*basic Programming practices
-*HTML, JSP
+* JPA and JPQL
+* Spring API
+* MySql
+* basic Programming practices
+* HTML, JSP
 
 
 ##Lessons Learned
