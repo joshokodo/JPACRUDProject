@@ -21,29 +21,28 @@ public class BountyMVCController {
 
 	@RequestMapping(path = {"home.do"}, method = RequestMethod.GET)
 	public String homePage(Model model) {
+		model.addAttribute("atHome", true);
 		return "/WEB-INF/views/home.jsp";
 	}
 
 	
 	@RequestMapping(path = {"navigationOptions.do"}, params = "home", method = RequestMethod.POST)
 	public String backToHomePage(Model model) {
+		model.addAttribute("atHome", true);
 		return "/WEB-INF/views/home.jsp";
 	}
 	@RequestMapping(path = "navigationOptions.do", params = "detail", method = RequestMethod.POST)
 	public String detailSearchPage(Model model) {
-		model.addAttribute("notHome", new Boolean(true));
 		model.addAttribute("detailSearch", new Boolean(true));
 		return "/WEB-INF/views/form.jsp";
 	}
 	@RequestMapping(path = "navigationOptions.do", params = "add", method = RequestMethod.POST)
 	public String addBountyPage(Model model) {
-		model.addAttribute("notHome", new Boolean(true));
 		model.addAttribute("addBounty", new Boolean(true));
 		return "/WEB-INF/views/form.jsp";
 	}
 	@RequestMapping(path = "alterBounty.do", params = "update", method = RequestMethod.POST)
 	public String editBountyPage(int id, Model model) {
-		model.addAttribute("notHome", new Boolean(true));
 		model.addAttribute("edit", new Boolean(true));
 		model.addAttribute("editBounty", bountyDAO.findById(id));
 		

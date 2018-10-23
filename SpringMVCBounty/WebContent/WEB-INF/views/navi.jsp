@@ -1,20 +1,67 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <nav>
 
-<form action="navigationOptions.do" method="post">
+	<form action="navigationOptions.do" method="post">
+		<div class="container">
+			<c:choose>
+				<c:when test="${atHome}">
+					<div class="row">
+						<div class="col-4"></div>
+						<div class="col-5">
+							<input type="submit" name="all" value="All Bounties" /> <input
+								type="submit" name="detail" value="Detail Search" /> <input
+								type="submit" name="add" value="Add Bounty" />
+
+						</div>
+						<div class="col-3"></div>
+					</div>
+				</c:when>
+				<c:otherwise>
+					<div class="row">
+						<div class="col">
+							<table>
+								<tr>
+									<th style="color: blue; font-size: 20px">B</th>
+									<th style="color: orange; font-size: 20px">O</th>
+									<th style="color: red; font-size: 20px">U</th>
+									<th style="color: green; font-size: 20px">N</th>
+									<th style="color: blue; font-size: 20px">T</th>
+									<th style="color: orange; font-size: 20px">Y</th>
+									<th><input type="search"></th>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-2"></div>
+						<div class="col-6">
+							<table>
+								<tr>
+									<td><input type="submit" name="home" value="Home Page" />
+									</td>
+									<td><input type="submit" name="all" value="All Bounties" />
+									</td>
+									<td><input type="submit" name="detail"
+										value="Detail Search" /></td>
+									<td><input type="submit" name="add" value="Add Bounty" /></td>
+
+								</tr>
+
+							</table>
+
+						</div>
+						<div class="col-4"></div>
+					</div>
+				</c:otherwise>
+			</c:choose>
+		</div>
 
 
-		<h3>Navigate</h3>
-		<input type="submit" name="home" value="Home Page" />
-		<input type="submit" name="all" value="All Bounties"/>
-		<input type="submit" name="detail" value="Detail Search"/>
-		<input type="submit" name="add" value="Add Bounty"/>		
-	
 
-
-</form>
+	</form>
 
 </nav>
 
