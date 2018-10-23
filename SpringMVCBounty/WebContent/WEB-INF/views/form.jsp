@@ -69,14 +69,24 @@
 		<h2>Create a new Bounty</h2>
 		<form action="addBounty.do" method="POST">
 			<h6>* Required Fields</h6>
-			<label for="firstNameSearched">*First Name</label> <input type="text"
-				name="firstName" pattern=".{3,}" required /> <br> <label
-				for="lastNameSearched">*Last Name</label> <input type="text"
-				name="lastName" pattern=".{3,}" required /> <br> <label
-				for="nicknameSearched">Nickname</label> <input type="text"
-				name="nickname" /> <br> <label for="description">*Description</label>
+			<label for="firstNameSearched">*First Name</label> 
+			<input type="text"
+				name="firstName" pattern=".{3,}" required /> 
+			<br> 
+			<label
+				for="lastNameSearched">*Last Name</label> 
+			<input type="text"
+				name="lastName" pattern=".{3,}" required /> 
+			<br> 
+			<label
+				for="nicknameSearched">Nickname</label> 
+			<input type="text"
+				name="nickname" /> 
+			<br> 
+			<label for="description">*Description</label>
 			<input type="text" name="description" pattern=".{3,}" required /> <br>
-			<br> <label for="wantedAlive">*Wanted Alive Only?</label> <br>
+			<br> 
+			<label for="wantedAlive">*Wanted Alive Only?</label> <br>
 			<label>Yes</label><input type="radio" name="wantedAlive" value="Y" />
 			<label>No</label><input type="radio" name="wantedAlive" value="N"
 				checked /> <br> <br> <label>*Crime Committed</label> <br>
