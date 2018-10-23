@@ -3,10 +3,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <nav>
 
-	<form action="navigationOptions.do" method="post">
-		<div class="container">
-			<c:choose>
-				<c:when test="${atHome}">
+	<div class="container">
+		<c:choose>
+			<c:when test="${atHome}">
+				<form action="navigationOptions.do" method="post">
 					<div class="row">
 						<div class="col-4"></div>
 						<div class="col-5">
@@ -17,10 +17,13 @@
 						</div>
 						<div class="col-3"></div>
 					</div>
-				</c:when>
-				<c:otherwise>
-					<div class="row">
-						<div class="col">
+				</form>
+			</c:when>
+			<c:otherwise>
+				<div class="row">
+					<div class="col">
+						<form action="search.do">
+
 							<table>
 								<tr>
 									<th style="color: blue; font-size: 20px">B</th>
@@ -29,15 +32,19 @@
 									<th style="color: green; font-size: 20px">N</th>
 									<th style="color: blue; font-size: 20px">T</th>
 									<th style="color: orange; font-size: 20px">Y</th>
-									<th><input type="search"></th>
+									<th><input type="search" name="searchText" size="30" /> <input
+										type="submit" name="search" value="Search" /></th>
+
 								</tr>
 							</table>
-						</div>
+						</form>
 					</div>
+				</div>
 
-					<div class="row">
-						<div class="col-2"></div>
-						<div class="col-6">
+				<div class="row">
+					<div class="col-2"></div>
+					<div class="col-8">
+						<form action="navigationOptions.do" method="post">
 							<table>
 								<tr>
 									<td><input type="submit" name="home" value="Home Page" />
@@ -45,23 +52,21 @@
 									<td><input type="submit" name="all" value="All Bounties" />
 									</td>
 									<td><input type="submit" name="detail"
-										value="Detail Search" /></td>
+										value="Detail Search" />
+									</td>
 									<td><input type="submit" name="add" value="Add Bounty" /></td>
-
 								</tr>
-
 							</table>
-
-						</div>
-						<div class="col-4"></div>
+						</form>
 					</div>
-				</c:otherwise>
-			</c:choose>
-		</div>
+					<div class="col-2"></div>
+				</div>
+			</c:otherwise>
+		</c:choose>
+	</div>
 
 
 
-	</form>
 
 </nav>
 
