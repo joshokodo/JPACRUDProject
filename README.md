@@ -1,5 +1,5 @@
 ## Week 8 Homework: JPACRUD Project
-
+![Alt text](bountyimg.png "Front Page")
 ### Overview
 This program was to assigned to test and practice using basic C.R.U.D. operations on a connecting database using JPA and a Spring API configuration. We used JSP's specifically to make the front end. 
 
